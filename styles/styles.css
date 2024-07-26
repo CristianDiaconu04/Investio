@@ -1,0 +1,129 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Merriweather', serif; 
+}
+
+header {
+    width: 100%;
+}
+
+.topPanel {
+    background-color: #f2f2f2;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+}
+
+.topPanel h1 {
+    font-weight: 700; /* Bold */
+    margin: 0;
+}
+
+.topPanel .centered-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 30%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: 700; /* Bold */
+}
+
+td {
+    background-color: #fff;
+}
+
+/* right panel on mainPage.html with the buy/sell stocks */
+.rightPanel {
+    width: 30%; 
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* background-color: #ccc; */
+    align-items: center;
+
+    /* display: flex;
+    flex-direction: column; */
+
+    /* width: 30%;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; */
+}

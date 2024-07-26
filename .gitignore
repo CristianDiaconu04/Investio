@@ -1,0 +1,6 @@
+credentials.js
+node_modules
+archive
+__pycache__
+package-lock.json
+package.json

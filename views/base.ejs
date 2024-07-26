@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investio</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="topPanel">
+            <h1>Investio</h1>
+        </div>
+    </header>
+    <main>
+        <!-- Log-in area -->
+        <form action="/" method="POST">
+            <!-- Logging in with username and password -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Log in</button>
+        </form>
+
+        <form action="/register" method="GET">
+            <!-- Button to register if you do not already have an account -->
+            <button type="submit" id="registerButtonBase">Register</button>
+        </form>
+    </main>
+</body>
+</html>

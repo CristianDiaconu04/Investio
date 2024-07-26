@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investio</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="topPanel">
+            <h1>Investio</h1>
+            <div class="centered-title">
+                <h2><%= username %> Investment Portfolio</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <p>Cash Balance: $<%= cashBalance %></p>
+        <p>Total Balance: $<%= totalBalance %></p>
+        <h3>Your Stocks</h3>
+        <table>
+            <tr>
+                <th>Ticker</th>
+                <th>Num. Shares</th>
+                <th>Cur. Price</th>
+                <th>Buy Price</th>
+                <th>% Change</th>
+            </tr>
+            <% stocks.forEach(function(stock) { %>
+                <tr>
+                    <td><%= stock.name %></td>
+                    <td><%= stock.numShares %></td>
+                    <td>$<%= stock.curPrice %></td>
+                    <td>$<%= stock.buyPrice %></td>
+                    <td><%= stock.percentChange.toFixed(2) %> %</td>
+                </tr>
+            <% }); %>
+        </table>
+
+        <div class="rightPanel">
+            <!-- Form to get the stock price -->
+            <h3>Check Stock Price</h3>
+            <form action="/getStockPrice" method="POST">
+                <label for="stockTicker">Stock Ticker:</label>
+                <input type="text" id="stockTicker" name="stockTicker" required>
+                <button type="submit">Get Price</button>
+            </form>
+
+            <% if (typeof stockPrice !== 'undefined') { %>
+                <h4>Current Price for <%= stockTicker %>: $<%= stockPrice %></h4>
+                
+                <!-- Form to sell stocks -->
+                <h3>Sell Shares</h3>
+                <form action="/sell" method="POST">
+                    <input type="hidden" name="stockTicker" value="<%= stockTicker %>">
+                    <label for="sellNumShares">Number of Shares:</label>
+                    <input type="number" id="sellNumShares" name="sellNumShares" required>
+                    <button type="submit">Sell</button>
+                </form>
+
+                <!-- Form to buy stocks -->
+                <h3>Buy Shares</h3>
+                <form action="/buy" method="POST">
+                    <input type="hidden" name="stockTicker" value="<%= stockTicker %>">
+                    <label for="numShares">Number of Shares:</label>
+                    <input type="number" id="numShares" name="numShares" required>
+                    <button type="submit">Buy</button>
+                </form>
+            <% } %>
+        </div>
+
+        
+    </main>
+</body>
+</html>
